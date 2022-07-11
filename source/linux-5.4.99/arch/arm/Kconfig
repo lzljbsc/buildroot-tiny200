@@ -676,10 +676,6 @@ config IWMMXT
 	  Enable support for iWMMXt context switching at run time if
 	  running on a CPU that supports it.
 
-if !MMU
-source "arch/arm/Kconfig-nommu"
-endif
-
 config PJ4B_ERRATA_4742
 	bool "PJ4B Errata 4742: IDLE Wake Up Commands can Cause the CPU Core to Cease Operation"
 	depends on CPU_PJ4B && MACH_ARMADA_370
