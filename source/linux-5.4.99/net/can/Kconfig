@@ -55,6 +55,4 @@ config CAN_GW
 
 source "net/can/j1939/Kconfig"
 
-source "drivers/net/can/Kconfig"
-
 endif

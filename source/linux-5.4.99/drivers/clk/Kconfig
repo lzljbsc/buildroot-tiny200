@@ -30,8 +30,6 @@ config COMMON_CLK_WM831X
           Supports the clocking subsystem of the WM831x/2x series of
 	  PMICs from Wolfson Microelectronics.
 
-source "drivers/clk/versatile/Kconfig"
-
 config CLK_HSDK
 	bool "PLL Driver for HSDK platform"
 	depends on OF || COMPILE_TEST
@@ -305,27 +303,7 @@ config COMMON_CLK_FIXED_MMIO
 	help
 	  Support for Memory Mapped IO Fixed clocks
 
-source "drivers/clk/actions/Kconfig"
-source "drivers/clk/analogbits/Kconfig"
-source "drivers/clk/bcm/Kconfig"
-source "drivers/clk/hisilicon/Kconfig"
-source "drivers/clk/imgtec/Kconfig"
-source "drivers/clk/imx/Kconfig"
-source "drivers/clk/ingenic/Kconfig"
-source "drivers/clk/keystone/Kconfig"
-source "drivers/clk/mediatek/Kconfig"
-source "drivers/clk/meson/Kconfig"
-source "drivers/clk/mvebu/Kconfig"
-source "drivers/clk/qcom/Kconfig"
-source "drivers/clk/renesas/Kconfig"
-source "drivers/clk/samsung/Kconfig"
-source "drivers/clk/sifive/Kconfig"
-source "drivers/clk/sprd/Kconfig"
 source "drivers/clk/sunxi/Kconfig"
 source "drivers/clk/sunxi-ng/Kconfig"
-source "drivers/clk/tegra/Kconfig"
-source "drivers/clk/ti/Kconfig"
-source "drivers/clk/uniphier/Kconfig"
-source "drivers/clk/zynqmp/Kconfig"
 
 endmenu

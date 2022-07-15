@@ -150,10 +150,6 @@ config DRM_TI_SN65DSI86
 	help
 	  Texas Instruments SN65DSI86 DSI to eDP Bridge driver
 
-source "drivers/gpu/drm/bridge/analogix/Kconfig"
-
-source "drivers/gpu/drm/bridge/adv7511/Kconfig"
-
 source "drivers/gpu/drm/bridge/synopsys/Kconfig"
 
 endmenu

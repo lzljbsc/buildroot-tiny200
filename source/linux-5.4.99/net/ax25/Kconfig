@@ -117,6 +117,4 @@ config ROSE
 menu "AX.25 network device drivers"
 	depends on HAMRADIO && AX25
 
-source "drivers/net/hamradio/Kconfig"
-
 endmenu

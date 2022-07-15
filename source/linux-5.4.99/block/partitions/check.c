@@ -21,21 +21,8 @@
 
 #include "check.h"
 
-#include "acorn.h"
-#include "amiga.h"
-#include "atari.h"
-#include "ldm.h"
-#include "mac.h"
 #include "msdos.h"
-#include "osf.h"
-#include "sgi.h"
-#include "sun.h"
-#include "ibm.h"
-#include "ultrix.h"
 #include "efi.h"
-#include "karma.h"
-#include "sysv68.h"
-#include "cmdline.h"
 
 int warn_no_part = 1; /*This is ugly: should make genhd removable media aware*/
 
