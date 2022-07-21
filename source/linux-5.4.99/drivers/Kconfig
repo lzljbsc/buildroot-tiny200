@@ -13,8 +13,6 @@ source "drivers/mtd/Kconfig"
 
 source "drivers/of/Kconfig"
 
-source "drivers/misc/Kconfig"
-
 source "drivers/scsi/Kconfig"
 
 source "drivers/net/Kconfig"
@@ -58,8 +56,6 @@ source "drivers/hid/Kconfig"
 source "drivers/usb/Kconfig"
 
 source "drivers/mmc/Kconfig"
-
-source "drivers/leds/Kconfig"
 
 source "drivers/rtc/Kconfig"
 

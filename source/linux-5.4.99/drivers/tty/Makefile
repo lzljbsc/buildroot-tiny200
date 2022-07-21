@@ -14,9 +14,7 @@ obj-$(CONFIG_TRACE_SINK)	+= n_tracesink.o
 obj-$(CONFIG_R3964)		+= n_r3964.o
 
 obj-y				+= vt/
-obj-$(CONFIG_HVC_DRIVER)	+= hvc/
 obj-y				+= serial/
-obj-$(CONFIG_SERIAL_DEV_BUS)	+= serdev/
 
 # tty drivers
 obj-$(CONFIG_AMIGA_BUILTIN_SERIAL) += amiserial.o
@@ -35,4 +33,3 @@ obj-$(CONFIG_GOLDFISH_TTY)	+= goldfish.o
 obj-$(CONFIG_MIPS_EJTAG_FDC_TTY) += mips_ejtag_fdc.o
 obj-$(CONFIG_VCC)		+= vcc.o
 
-obj-y += ipwireless/

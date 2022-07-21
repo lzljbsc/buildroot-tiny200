@@ -195,18 +195,8 @@ config MTD_PARTITIONED_MASTER
 
 source "drivers/mtd/chips/Kconfig"
 
-source "drivers/mtd/maps/Kconfig"
-
-source "drivers/mtd/devices/Kconfig"
-
 source "drivers/mtd/nand/Kconfig"
 
-source "drivers/mtd/lpddr/Kconfig"
-
 source "drivers/mtd/spi-nor/Kconfig"
-
-source "drivers/mtd/ubi/Kconfig"
-
-source "drivers/mtd/hyperbus/Kconfig"
 
 endif # MTD

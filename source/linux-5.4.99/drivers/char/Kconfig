@@ -27,7 +27,6 @@ config DEVKMEM
 	  When in doubt, say "N".
 
 source "drivers/tty/serial/Kconfig"
-source "drivers/tty/serdev/Kconfig"
 
 config TTY_PRINTK
 	tristate "TTY driver to output user messages via printk"
@@ -112,8 +111,6 @@ config PPDEV
 	  module will be called ppdev.
 
 	  If unsure, say N.
-
-source "drivers/tty/hvc/Kconfig"
 
 config VIRTIO_CONSOLE
 	tristate "Virtio console"

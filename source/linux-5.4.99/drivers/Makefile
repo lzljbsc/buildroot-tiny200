@@ -46,7 +46,7 @@ obj-y				+= gpu/
 obj-$(CONFIG_FB_I810)           += video/fbdev/i810/
 obj-$(CONFIG_FB_INTEL)          += video/fbdev/intelfb/
 
-obj-y				+= base/ misc/ mfd/
+obj-y				+= base/ mfd/
 obj-$(CONFIG_DMA_SHARED_BUFFER) += dma-buf/
 obj-y				+= scsi/
 obj-$(CONFIG_MTD)		+= mtd/
@@ -72,7 +72,6 @@ obj-$(CONFIG_PM_OPP)		+= opp/
 obj-$(CONFIG_CPU_FREQ)		+= cpufreq/
 obj-$(CONFIG_CPU_IDLE)		+= cpuidle/
 obj-y				+= mmc/
-obj-$(CONFIG_NEW_LEDS)		+= leds/
 obj-$(CONFIG_CRYPTO)		+= crypto/
 ifndef CONFIG_ARCH_USES_GETTIMEOFFSET
 obj-y				+= clocksource/
