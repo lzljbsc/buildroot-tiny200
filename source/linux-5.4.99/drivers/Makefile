@@ -18,8 +18,6 @@ obj-y				+= pwm/
 
 obj-y				+= pci/
 
-obj-y				+= video/
-
 obj-y				+= clk/
 # Many drivers will want to use DMA so this has to be made available
 # really early.
@@ -42,10 +40,6 @@ obj-y				+= char/
 # gpu/ comes after char for AGP vs DRM startup and after iommu
 obj-y				+= gpu/
 
-# i810fb and intelfb depend on char/agp/
-obj-$(CONFIG_FB_I810)           += video/fbdev/i810/
-obj-$(CONFIG_FB_INTEL)          += video/fbdev/intelfb/
-
 obj-y				+= base/ mfd/
 obj-$(CONFIG_DMA_SHARED_BUFFER) += dma-buf/
 obj-y				+= scsi/
@@ -62,7 +56,7 @@ obj-$(CONFIG_SERIO)		+= input/serio/
 obj-$(CONFIG_GAMEPORT)		+= input/gameport/
 obj-$(CONFIG_INPUT)		+= input/
 obj-$(CONFIG_RTC_LIB)		+= rtc/
-obj-y				+= i2c/ media/
+obj-y				+= i2c/
 obj-$(CONFIG_PPS)		+= pps/
 obj-y				+= ptp/
 obj-y				+= power/
