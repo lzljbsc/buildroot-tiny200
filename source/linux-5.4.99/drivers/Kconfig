@@ -57,8 +57,6 @@ source "drivers/dma/Kconfig"
 
 source "drivers/dma-buf/Kconfig"
 
-source "drivers/staging/Kconfig"
-
 source "drivers/clk/Kconfig"
 
 source "drivers/clocksource/Kconfig"

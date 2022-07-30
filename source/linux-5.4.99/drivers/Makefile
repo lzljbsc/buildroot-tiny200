@@ -37,9 +37,6 @@ obj-$(CONFIG_RESET_CONTROLLER)	+= reset/
 obj-y				+= tty/
 obj-y				+= char/
 
-# gpu/ comes after char for AGP vs DRM startup and after iommu
-obj-y				+= gpu/
-
 obj-y				+= base/ mfd/
 obj-$(CONFIG_DMA_SHARED_BUFFER) += dma-buf/
 obj-y				+= scsi/
@@ -72,7 +69,6 @@ obj-y				+= clocksource/
 endif
 obj-$(CONFIG_HID)		+= hid/
 obj-$(CONFIG_OF)		+= of/
-obj-$(CONFIG_STAGING)		+= staging/
 
 obj-$(CONFIG_EXTCON)		+= extcon/
 obj-$(CONFIG_PERF_EVENTS)	+= perf/
