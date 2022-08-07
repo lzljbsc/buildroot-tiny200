@@ -1781,8 +1781,6 @@ config CMD_QFW
 	  feature is to allow easy loading of files passed to qemu-system
 	  via -kernel / -initrd
 
-source "cmd/mvebu/Kconfig"
-
 config CMD_TERMINAL
 	bool "terminal - provides a way to attach a serial terminal"
 	help
@@ -1804,8 +1802,6 @@ config CMD_UUID
 	  output.
 
 endmenu
-
-source "cmd/ti/Kconfig"
 
 config CMD_BOOTSTAGE
 	bool "Enable the 'bootstage' command"

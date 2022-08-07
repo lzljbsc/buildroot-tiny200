@@ -131,15 +131,9 @@ PLATFORM_CPPFLAGS += $(call cc-option, -fno-pic)
 endif
 
 # limit ourselves to the sections we want in the .bin.
-ifdef CONFIG_ARM64
-OBJCOPYFLAGS += -j .text -j .secure_text -j .secure_data -j .rodata -j .data \
-		-j .u_boot_list -j .rela.dyn -j .got -j .got.plt \
-		-j .binman_sym_table -j .text_rest
-else
 OBJCOPYFLAGS += -j .text -j .secure_text -j .secure_data -j .rodata -j .hash \
 		-j .data -j .got -j .got.plt -j .u_boot_list -j .rel.dyn \
 		-j .binman_sym_table -j .text_rest
-endif
 
 # if a dtb section exists we always have to include it
 # there are only two cases where it is generated
@@ -147,27 +141,3 @@ endif
 # 2) unit tests include device tree blobs
 OBJCOPYFLAGS += -j .dtb.init.rodata
 
-ifdef CONFIG_EFI_LOADER
-OBJCOPYFLAGS += -j .efi_runtime -j .efi_runtime_rel
-endif
-
-ifneq ($(CONFIG_IMX_CONFIG),)
-ifdef CONFIG_SPL
-ifndef CONFIG_SPL_BUILD
-ALL-y += SPL
-endif
-else
-ifeq ($(CONFIG_OF_SEPARATE),y)
-ALL-y += u-boot-dtb.imx
-else
-ALL-y += u-boot.imx
-endif
-endif
-ifneq ($(CONFIG_VF610),)
-ALL-y += u-boot.vyb
-endif
-endif
-
-EFI_LDS := elf_arm_efi.lds
-EFI_CRT0 := crt0_arm_efi.o
-EFI_RELOC := reloc_arm_efi.o

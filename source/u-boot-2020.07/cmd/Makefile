@@ -180,18 +180,13 @@ obj-$(CONFIG_CMD_BLOB) += blob.o
 obj-$(CONFIG_CMD_AVB) += avb.o
 
 obj-$(CONFIG_ARM) += arm/
-obj-$(CONFIG_RISCV) += riscv/
-obj-$(CONFIG_X86) += x86/
 
-obj-$(CONFIG_ARCH_MVEBU) += mvebu/
 endif # !CONFIG_SPL_BUILD
 
 obj-$(CONFIG_$(SPL_)CMD_TLV_EEPROM) += tlv_eeprom.o
 
 # core command
 obj-y += nvedit.o
-
-obj-$(CONFIG_TI_COMMON_CMD_OPTIONS) += ti/
 
 filechk_data_gz = (echo "static const char data_gz[] ="; cat $< | scripts/bin2c; echo ";")
 

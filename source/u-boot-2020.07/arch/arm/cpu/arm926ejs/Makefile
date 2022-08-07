@@ -6,17 +6,6 @@
 extra-y	= start.o
 obj-y	= cpu.o cache.o
 
-ifdef	CONFIG_SPL_BUILD
-ifdef	CONFIG_SPL_NO_CPU_SUPPORT
-extra-y	:=
-endif
-endif
-
-obj-$(CONFIG_ARMADA100) += armada100/
-obj-$(CONFIG_MX25) += mx25/
-obj-$(CONFIG_MX27) += mx27/
-obj-$(if $(filter mxs,$(SOC)),y) += mxs/
-obj-$(if $(filter spear,$(SOC)),y) += spear/
 obj-$(CONFIG_ARCH_SUNXI) += sunxi/
 
 # some files can only build in ARM or THUMB2, not THUMB1
