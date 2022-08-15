@@ -5,23 +5,10 @@
 
 ifndef CONFIG_SPL_BUILD
 
-obj-$(CONFIG_EFI) += efi/
-obj-$(CONFIG_EFI_LOADER) += efi_driver/
-obj-$(CONFIG_EFI_LOADER) += efi_loader/
-obj-$(CONFIG_CMD_BOOTEFI_SELFTEST) += efi_selftest/
-obj-$(CONFIG_LZMA) += lzma/
-obj-$(CONFIG_BZIP2) += bzip2/
-obj-$(CONFIG_TIZEN) += tizen/
 obj-$(CONFIG_FIT) += libfdt/
 obj-$(CONFIG_OF_LIVE) += of_live.o
-obj-$(CONFIG_CMD_DHRYSTONE) += dhry/
-obj-$(CONFIG_ARCH_AT91) += at91/
-obj-$(CONFIG_OPTEE) += optee/
 obj-$(CONFIG_ASN1_DECODER) += asn1_decoder.o
-obj-y += crypto/
 
-obj-$(CONFIG_AES) += aes.o
-obj-$(CONFIG_AES) += aes/
 obj-$(CONFIG_$(SPL_TPL_)BINMAN_FDT) += binman.o
 
 ifndef API_BUILD
@@ -56,20 +43,13 @@ obj-$(CONFIG_TPM_V1) += tpm-v1.o
 obj-$(CONFIG_TPM_V2) += tpm-v2.o
 endif
 
-obj-$(CONFIG_$(SPL_)ACPIGEN) += acpi/
 obj-$(CONFIG_$(SPL_)MD5) += md5.o
-obj-$(CONFIG_$(SPL_)RSA) += rsa/
 obj-$(CONFIG_SHA1) += sha1.o
 obj-$(CONFIG_SHA256) += sha256.o
 
 obj-$(CONFIG_$(SPL_)ZLIB) += zlib/
-obj-$(CONFIG_$(SPL_)ZSTD) += zstd/
 obj-$(CONFIG_$(SPL_)GZIP) += gunzip.o
-obj-$(CONFIG_$(SPL_)LZO) += lzo/
-obj-$(CONFIG_$(SPL_)LZMA) += lzma/
 obj-$(CONFIG_$(SPL_)LZ4) += lz4_wrapper.o
-
-obj-$(CONFIG_LIBAVB) += libavb/
 
 obj-$(CONFIG_$(SPL_TPL_)OF_LIBFDT) += libfdt/
 ifneq ($(CONFIG_$(SPL_TPL_)BUILD)$(CONFIG_$(SPL_TPL_)OF_PLATDATA),yy)

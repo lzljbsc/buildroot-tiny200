@@ -179,8 +179,6 @@ obj-$(CONFIG_CMD_BLOB) += blob.o
 # Android Verified Boot 2.0
 obj-$(CONFIG_CMD_AVB) += avb.o
 
-obj-$(CONFIG_ARM) += arm/
-
 endif # !CONFIG_SPL_BUILD
 
 obj-$(CONFIG_$(SPL_)CMD_TLV_EEPROM) += tlv_eeprom.o

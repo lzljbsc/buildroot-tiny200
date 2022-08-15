@@ -761,26 +761,10 @@ libs-y += lib/
 libs-$(HAVE_VENDOR_COMMON_LIB) += board/$(VENDOR)/common/
 libs-$(CONFIG_OF_EMBED) += dts/
 libs-y += fs/
-libs-y += net/
 libs-y += disk/
 libs-y += drivers/
-libs-y += drivers/dma/
 libs-y += drivers/gpio/
-libs-y += drivers/i2c/
-libs-y += drivers/net/
-libs-y += drivers/net/phy/
-libs-y += drivers/power/ \
-	drivers/power/domain/ \
-	drivers/power/fuel_gauge/ \
-	drivers/power/mfd/ \
-	drivers/power/pmic/ \
-	drivers/power/battery/ \
-	drivers/power/regulator/
 libs-y += drivers/spi/
-libs-$(CONFIG_FMAN_ENET) += drivers/net/fm/
-libs-$(CONFIG_SYS_FSL_DDR) += drivers/ddr/fsl/
-libs-$(CONFIG_SYS_FSL_MMDC) += drivers/ddr/fsl/
-libs-$(CONFIG_$(SPL_)ALTERA_SDRAM) += drivers/ddr/altera/
 libs-y += drivers/serial/
 libs-y += drivers/usb/cdns3/
 libs-y += drivers/usb/dwc3/
@@ -797,13 +781,6 @@ libs-y += drivers/usb/ulpi/
 libs-y += cmd/
 libs-y += common/
 libs-y += env/
-ifdef CONFIG_POST
-libs-y += post/
-endif
-libs-$(CONFIG_UNIT_TEST) += test/ test/dm/
-libs-$(CONFIG_UT_ENV) += test/env/
-libs-$(CONFIG_UT_OPTEE) += test/optee/
-libs-$(CONFIG_UT_OVERLAY) += test/overlay/
 
 libs-y += $(if $(BOARDDIR),board/$(BOARDDIR)/)
 
@@ -2143,15 +2120,6 @@ help:
 	@echo  ''
 	@echo  'Execute "make" or "make all" to build all targets marked with [*] '
 	@echo  'For further info see the ./README file'
-
-tests check:
-	$(srctree)/test/run
-
-qcheck:
-	$(srctree)/test/run quick
-
-tcheck:
-	$(srctree)/test/run tools
 
 # Documentation targets
 # ---------------------------------------------------------------------------

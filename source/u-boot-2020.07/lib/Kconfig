@@ -262,21 +262,7 @@ config TRACE_EARLY_ADDR
 	  the size is too small then the message which says the amount of early
 	  data being coped will the the same as the
 
-source lib/dhry/Kconfig
-
 menu "Security support"
-
-config AES
-	bool "Support the AES algorithm"
-	help
-	  This provides a means to encrypt and decrypt data using the AES
-	  (Advanced Encryption Standard). This algorithm uses a symetric key
-	  and is widely used as a streaming cipher. Different key lengths are
-	  supported by the algorithm but only a 128-bit key is supported at
-	  present.
-
-source lib/rsa/Kconfig
-source lib/crypto/Kconfig
 
 config TPM
 	bool "Trusted Platform Module (TPM) Support"
@@ -310,20 +296,6 @@ config TPL_TPM
 	  command to interactive the TPM. Driver model support is provided
 	  for the low-level TPM interface, but only one TPM is supported at
 	  a time by the TPM library.
-
-endmenu
-
-menu "Android Verified Boot"
-
-config LIBAVB
-	bool "Android Verified Boot 2.0 support"
-	depends on ANDROID_BOOT_IMAGE
-	default n
-	help
-	  This enables support of Android Verified Boot 2.0 which can be used
-	  to assure the end user of the integrity of the software running on a
-	  device. Introduces such features as boot chain of trust, rollback
-	  protection etc.
 
 endmenu
 
@@ -619,10 +591,6 @@ config OID_REGISTRY
 	bool
 	help
 	  Enable fast lookup object identifier registry.
-
-source lib/efi/Kconfig
-source lib/efi_loader/Kconfig
-source lib/optee/Kconfig
 
 config TEST_FDTDEC
 	bool "enable fdtdec test"
