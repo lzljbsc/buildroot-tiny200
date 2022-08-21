@@ -8,11 +8,7 @@ source "drivers/block/Kconfig"
 
 source "drivers/clk/Kconfig"
 
-source "drivers/cpu/Kconfig"
-
 source "drivers/crypto/Kconfig"
-
-source "drivers/board/Kconfig"
 
 source "drivers/dfu/Kconfig"
 

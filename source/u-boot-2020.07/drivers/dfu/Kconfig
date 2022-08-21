@@ -9,20 +9,7 @@ config DFU_OVER_USB
 	select HASH
 	depends on USB_GADGET
 
-config DFU_OVER_TFTP
-	bool
-	depends on NET
-
 if DFU
-config DFU_TFTP
-	bool "DFU via TFTP"
-	select DFU_OVER_TFTP
-	help
-	  This option allows performing update of DFU-managed medium with data
-	  sent via TFTP boot.
-
-	  Detailed description of this feature can be found at ./doc/README.dfutftp
-
 config DFU_TIMEOUT
 	bool "Timeout waiting for DFU"
 	help
@@ -33,26 +20,6 @@ config DFU_MMC
 	bool "MMC back end for DFU"
 	help
 	  This option enables using DFU to read and write to MMC based storage.
-
-config DFU_NAND
-	bool "NAND back end for DFU"
-	depends on CMD_MTDPARTS
-	depends on MTD_RAW_NAND
-	help
-	  This option enables using DFU to read and write to NAND based
-	  storage.
-
-config DFU_NAND_TRIMFFS
-	bool "Skip empty pages when flashing UBI images to NAND"
-	depends on DFU_NAND
-	help
-	  When flashing UBI images to NAND, enable the DROP_FFS flag to drop
-	  trailing all-0xff pages.
-
-config DFU_RAM
-	bool "RAM back end for DFU"
-	help
-	  This option enables using DFU to read and write RAM on the target.
 
 config DFU_SF
 	bool "SPI flash back end for DFU"
@@ -73,13 +40,6 @@ config DFU_MTD
 	depends on DM_MTD
 	help
 	  This option enables using DFU to read and write to on any MTD device.
-
-config DFU_VIRT
-	bool "VIRTUAL flash back end for DFU"
-	help
-	  This option enables using DFU to read and write to VIRTUAL device
-	  used at board level to manage specific behavior
-	  (OTP update for example).
 
 config SET_DFU_ALT_INFO
 	bool "Dynamic set of DFU alternate information"

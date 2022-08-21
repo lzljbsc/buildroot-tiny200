@@ -143,8 +143,6 @@ config NO_FB_CLEAR
 	  loads takes over the screen.  This, for example, can be used to
 	  keep splash image on screen until grub graphical boot menu starts.
 
-source "drivers/video/fonts/Kconfig"
-
 config VIDCONSOLE_AS_LCD
 	bool "Use 'vidconsole' when 'lcd' is seen in stdout"
 	depends on DM_VIDEO
@@ -427,8 +425,6 @@ config VIDEO_LCD_SPI_MISO
 	option takes a string in the format understood by 'name_to_gpio'
 	function, e.g. PH1 for pin 1 of port H.
 
-source "drivers/video/meson/Kconfig"
-
 config VIDEO_MVEBU
 	bool "Armada XP LCD controller"
 	default n
@@ -529,8 +525,6 @@ config VIDEO_FSL_DCU_MAX_FB_SIZE_MB
 	 Set maximum framebuffer size to be used for Freescale Display
 	 Controller Unit (DCU4).
 
-source "drivers/video/rockchip/Kconfig"
-
 config VIDEO_ARM_MALIDP
 	bool "Enable Arm Mali Display Processor support"
 	depends on DM_VIDEO && OF_CONTROL
@@ -547,30 +541,6 @@ config VIDEO_SANDBOX_SDL
 	  appears as an SDL (Simple DirectMedia Layer) window. This is a
 	  console device and can display stdout output. Within U-Boot is is
 	  a normal bitmap display and can display images as well as text.
-
-source "drivers/video/stm32/Kconfig"
-
-config VIDEO_TEGRA20
-	bool "Enable LCD support on Tegra20"
-	depends on OF_CONTROL
-	help
-	   Tegra20 supports video output to an attached LCD panel as well as
-	   other options such as HDMI. Only the LCD is supported in U-Boot.
-	   This option enables this support which can be used on devices which
-	   have an LCD display connected.
-
-config VIDEO_TEGRA124
-	bool "Enable video support on Tegra124"
-	depends on DM_VIDEO
-	help
-	   Tegra124 supports many video output options including eDP and
-	   HDMI. At present only eDP is supported by U-Boot. This option
-	   enables this support which can be used on devices which
-	   have an eDP display connected.
-
-source "drivers/video/bridge/Kconfig"
-
-source "drivers/video/imx/Kconfig"
 
 config VIDEO
 	bool "Enable legacy video support"
