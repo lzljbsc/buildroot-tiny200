@@ -877,7 +877,5 @@ source "boot/Config.in"
 
 source "package/Config.in.host"
 
-source "Config.in.legacy"
-
 # br2-external menus definitions
 source "$BR2_BASE_DIR/.br2-external.in.menus"

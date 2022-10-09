@@ -234,7 +234,7 @@ config BR2_TOOLCHAIN_GLIBC_GCONV_LIBS_LIST
 
 config BR2_TOOLCHAIN_EXTRA_LIBS
 	string "Extra toolchain libraries to be copied to target"
-	default BR2_TOOLCHAIN_EXTRA_EXTERNAL_LIBS if BR2_TOOLCHAIN_EXTRA_EXTERNAL_LIBS != "" # legacy
+	default ""
 	depends on !BR2_STATIC_LIBS
 	help
 	  If your toolchain provides extra libraries that need to be

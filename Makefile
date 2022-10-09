@@ -507,10 +507,6 @@ export BASE_DIR
 
 all: world
 
-# Include legacy before the other things, because package .mk files
-# may rely on it.
-include Makefile.legacy
-
 include system/system.mk
 include package/Makefile.in
 # arch/arch.mk must be after package/Makefile.in because it may need to
@@ -1215,9 +1211,6 @@ check-package:
 .PHONY: .gitlab-ci.yml
 .gitlab-ci.yml: .gitlab-ci.yml.in
 	./support/scripts/generate-gitlab-ci-yml $< > $@
-
-include docs/manual/manual.mk
--include $(foreach dir,$(BR2_EXTERNAL_DIRS),$(sort $(wildcard $(dir)/docs/*/*.mk)))
 
 .PHONY: $(noconfig_targets)
 
